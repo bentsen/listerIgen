@@ -57,4 +57,15 @@ class ListeTest
         assertEquals("3",liste.removeFromHead());
         assertEquals("21",liste.printFromHead());
     }
+
+    @Test
+    void removeFromTail()
+    {
+        liste.insertFromHead("1");
+        liste.insertFromHead("2");
+        liste.insertFromHead("3");
+
+        assertEquals("1",liste.removeFromTail());
+        assertEquals("23",liste.printFromTail());
+    }
 }

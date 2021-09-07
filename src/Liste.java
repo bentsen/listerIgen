@@ -91,4 +91,19 @@ public class Liste
 
         return n.data;
     }
+
+    public String removeFromTail()
+    {
+        if(isEmpty())
+        {
+            return "";
+        }
+
+        Node n = tail;
+
+        n.previous.next = null;
+        tail = n.previous;
+
+        return n.data;
+    }
 }
