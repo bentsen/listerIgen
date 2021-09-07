@@ -10,9 +10,7 @@ class ListeTest
     @org.junit.jupiter.api.Test
     void insertFromHead()
     {
-        assertEquals("1",liste.insertFromHead("1"));
-        assertEquals("2",liste.insertFromHead("2"));
-        assertEquals("3",liste.insertFromHead("3"));
+
     }
 
     @Test
@@ -21,5 +19,15 @@ class ListeTest
         assertEquals(true,liste.isEmpty());
         liste.insertFromHead("Viktor");
         assertEquals(false,liste.isEmpty());
+    }
+
+    @Test
+    void printListFromHead()
+    {
+        liste.insertFromHead("1");
+        liste.insertFromHead("2");
+        liste.insertFromHead("3");
+
+        assertEquals("321",liste.printFromHead());
     }
 }
