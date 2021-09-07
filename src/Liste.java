@@ -56,10 +56,10 @@ public class Liste
             return tail;
         }
 
-        head.previous = node;
-        node.next = tail;
+        head.next = node;
+        node.previous = tail;
 
-        head = node;
+        tail = node;
 
         return  tail;
     }
