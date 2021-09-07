@@ -63,4 +63,17 @@ public class Liste
 
         return  tail;
     }
+
+    public String printFromTail()
+    {
+        Node n = tail;
+        String res = "";
+
+        while(n != null)
+        {
+            res = res +n.data;
+            n = n.previous;
+        }
+        return res;
+    }
 }

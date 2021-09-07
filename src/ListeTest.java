@@ -36,4 +36,14 @@ class ListeTest
     {
         assertEquals("1", liste.insertFromTail("1").data);
     }
+
+    @Test
+    void printListFromTail()
+    {
+        liste.insertFromTail("1");
+        liste.insertFromTail("2");
+        liste.insertFromTail("3");
+
+        assertEquals("123",liste.printFromTail());
+    }
 }
