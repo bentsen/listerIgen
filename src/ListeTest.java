@@ -10,7 +10,7 @@ class ListeTest
     @org.junit.jupiter.api.Test
     void insertFromHead()
     {
-
+        assertEquals("1", liste.insertFromHead("1").data);
     }
 
     @Test
@@ -29,5 +29,11 @@ class ListeTest
         liste.insertFromHead("3");
 
         assertEquals("321",liste.printFromHead());
+    }
+
+    @Test
+    void insertFromTail()
+    {
+        assertEquals("1", liste.insertFromTail("1").data);
     }
 }

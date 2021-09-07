@@ -44,4 +44,23 @@ public class Liste
         }
         return res;
     }
+
+    public Node insertFromTail(String s)
+    {
+        Node node = new Node(s);
+
+        if(isEmpty())
+        {
+            head = node;
+            tail = node;
+            return tail;
+        }
+
+        head.previous = node;
+        node.next = tail;
+
+        head = node;
+
+        return  tail;
+    }
 }
