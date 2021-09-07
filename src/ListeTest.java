@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ListeTest
@@ -8,11 +10,16 @@ class ListeTest
     @org.junit.jupiter.api.Test
     void insertFromHead()
     {
-        Node node = new Node("2");
-        Node node1 = new Node("3");
+        assertEquals("1",liste.insertFromHead("1"));
+        assertEquals("2",liste.insertFromHead("2"));
+        assertEquals("3",liste.insertFromHead("3"));
+    }
 
-        assertEquals("1",liste.insertFromHead(new Node("1")).data);
-        assertEquals("2",liste.insertFromHead(node).data);
-        assertEquals("3",liste.insertFromHead(node1).data);
+    @Test
+    void isEmpty()
+    {
+        assertEquals(true,liste.isEmpty());
+        liste.insertFromHead("Viktor");
+        assertEquals(false,liste.isEmpty());
     }
 }
