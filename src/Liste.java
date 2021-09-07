@@ -3,20 +3,31 @@ public class Liste
     Node head = null;
     Node tail = null;
 
-
-    public Node insertFromHead(Node n)
+    public boolean isEmpty()
     {
-        if(head == null)
+        if (head == null)
         {
-            head = n;
-            tail = n;
+            return true;
+        }
+        return false;
+    }
+
+    public Node insertFromHead(String s)
+    {
+
+        Node node = new Node(s);
+
+        if(isEmpty())
+        {
+            head = node;
+            tail = node;
             return head;
         }
 
-        head.previous = n;
-        n.next = head;
+        head.previous = node;
+        node.next = head;
 
-        head = n;
+        head = node;
 
         return  head;
     }
