@@ -97,12 +97,12 @@ class ListeTest
     void addNode()
     {
         liste.insertFromHead("1");
-        liste.insertFromHead("2");
+        liste.insertFromHead("3");
         liste.insertFromHead("4");
         liste.insertFromHead("5");
 
-        liste.addNode("3");
+        liste.addNode("9",1);
 
-        assertEquals("54321",liste.printFromHead());
+        assertEquals("91345",liste.printFromTail());
     }
 }

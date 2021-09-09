@@ -158,7 +158,7 @@ public class Liste
         }
     }
 
-    public void addNode(String s)
+    public void addNode(String s, int number)
     {
 
         if(isEmpty())
@@ -168,32 +168,48 @@ public class Liste
 
         else
         {
-            Node newNode = new Node(s);
-
-            Node ptr = tail;
-            Node ptr2 = head;
-            int len = 0;
-
-            while(ptr != null)  // get length of list
+            if(number == 1)
             {
-                len++;
-                ptr = ptr.previous;
+                insertFromTail(s);
+            }
+            else
+                {
+
+                Node newNode = new Node(s);
+
+                Node ptr = tail;
+                Node ptr2 = head;
+                int len = 0;
+
+                while (ptr != null)  // get length of list
+                {
+                    len++;
+                    ptr = ptr.previous;
+                }
+
+                ptr = tail;  // change ptr back to tail
+
+                if (number > len + 1)  //Secure you can type to large number
+                {
+                    System.out.println("Placement longer then length of list");
+                    System.out.println("number put in the end of list");
+                    number = len + 1;
+                }
+
+                while ((number--) - 1 > 1)
+                {
+                    ptr = ptr.previous;
+                    ptr2 = ptr2.next;
+                }
+
+
+                    newNode.previous = ptr.previous;
+                    ptr.previous = newNode;
+                    newNode.next = ptr2.next;
+                    ptr2.next = newNode;
+
             }
 
-            int count = ((len % 2) == 0) ? (len/2) : (len + 1) / 2; // find middle of list
-            ptr = tail;  // change ptr back to tail
-
-
-            while (count-- > 1)
-            {
-                ptr = ptr.previous;
-                ptr2 = ptr2.next;
-            }
-
-            newNode.previous = ptr.previous;
-            ptr.previous = newNode;
-            newNode.next = ptr2.next;
-            ptr2.next = newNode;
         }
 
     }

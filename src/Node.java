@@ -1,8 +1,8 @@
 public class Node
 {
-    Node previous = null;
-    Node next = null;
-    String data;
+    public Node previous = null;
+    public Node next = null;
+    public String data;
 
     public Node(String data)
     {
